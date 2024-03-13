@@ -18,7 +18,12 @@ const ShopContextProvider = (props) => {
   // using api to get the data
   useEffect(() => {
     fetch('http://localhost:4000/allproducts')
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
       .then((data) => setAll_Product(data))
       .catch((error) => console.error('Error fetching products:', error));
 
@@ -33,7 +38,12 @@ const ShopContextProvider = (props) => {
         },
         body: JSON.stringify({ itemId })
       })
-        .then((response) => response.json())
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
         .then((data) => console.log(data))
         .catch((error) => console.error('Error:', error)); // Handle the error here
 

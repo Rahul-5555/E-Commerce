@@ -278,12 +278,13 @@ app.post('/addtocart', fetchUser, async (req, res) => {
     console.log("Added", req.body.itemId);
     let userData = await Users.findOne({ _id: req.user.id });
     if (!userData) {
-        return res.status(404).send("User not found");
+        return res.status(404).json({ success: false, message: "User not found" });
     }
     userData.cartData[req.body.itemId] += 1;
     await Users.findOneAndUpdate({ _id: req.user.id }, { cartData: userData.cartData });
-    res.send("Added")
+    res.json({ success: true });
 })
+
 
 
 // 15. creating endpoint to remove product from cartdata
