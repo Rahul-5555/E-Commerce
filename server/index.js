@@ -22,10 +22,10 @@ app.use(express.json());
 app.use(cors());
 
 // Use the client app
-app.use(express.static(path.join(__dirname, 'client/build')))
+app.use(express.static(path.join(__dirname, 'server/client/build')))
 
 // Render client for any path
-app.get("*", (req, res) => res.sendFile(path.join(__dirname, 'client/build', 'index.html')));
+app.get("*", (req, res) => res.sendFile(path.join(__dirname, 'server/client/build', 'index.html')));
 
 // Database Connection with MongoDb after write below link mongodb is connected with our express server
 mongoose.connect(process.env.DB_URI, { dbName: "E-Commerce1" })
