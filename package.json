@@ -16,7 +16,7 @@
     "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
     "start:frontend": "cd server/client && npm start",
     "start:backend": "cd server && npm start",
-    "build": "npm install --prefix ./client && npm run build --prefix ./client && npm install"
+    "build": "npm install --prefix . && npm run build --prefix . && npm install"
   },
   "eslintConfig": {
     "extends": [
