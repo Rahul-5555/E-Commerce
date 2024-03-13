@@ -10,7 +10,7 @@ rahul.txt
 /coverage
 
 # production
-/build
+build
 /package-lock.json
 /README.md
 
