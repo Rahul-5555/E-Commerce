@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(cors());
 
 // Use the client app
-app.use(express.static(path.join(__dirname, '/client/build')))
+app.use(express.static(path.join(__dirname, '/server/client/build')))
 
 // Render client for any path
 app.get("*", (req, res) => res.sendFile(path.join(__dirname, '/client/build', 'index.html')));
