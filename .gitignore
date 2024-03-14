@@ -13,7 +13,7 @@ rahul.txt
 /build
 /package-lock.json
 /README.md
-
+/upload
 # misc
 .DS_Store
 .env.local
