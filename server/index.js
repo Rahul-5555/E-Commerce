@@ -22,7 +22,6 @@ app.use(express.json());
 app.use(cors());
 
 // Use the client app
-// Use the client app
 app.use(express.static(path.join(__dirname, 'client', 'build')));
 
 // Render client for any path
@@ -35,15 +34,12 @@ mongoose.connect(process.env.DB_URI, { dbName: "E-Commerce1" })
         console.log("Connected to DB Successfully")
     })
 
-
 // 2. API Creation 
-
 app.get("/", (req, res) => {
     res.send("Express App is Running")
 })
 
 // 3. Image Storage Engine using multer
-
 const storage = multer.diskStorage({
     destination: './upload/images',
     filename: (req, file, cb) => {
