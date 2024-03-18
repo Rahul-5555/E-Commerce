@@ -19,7 +19,7 @@
     "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
     "start:frontend": "cd server/client && npm start",
     "start:backend": "cd server && npm start",
-    "build": "npm install --prefix . && npm run build --prefix . && npm install"
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
